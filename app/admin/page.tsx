@@ -1,9 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { FileTextIcon } from "@radix-ui/react-icons";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import Form from "./components/Form";
 
 export default async function Page() {
   const supabase = createServerComponentClient({ cookies });
@@ -31,11 +30,7 @@ export default async function Page() {
         <FileTextIcon className="w-5 h-5" />
           <h2>Text Management Panel</h2>
         </div>
-        <Textarea
-          placeholder="Paste your text here or start typing..."
-          className="h-96"
-        />
-        <Button>Submit</Button>
+        <Form />
       </div>
     </div>
   );

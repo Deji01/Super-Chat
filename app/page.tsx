@@ -1,3 +1,4 @@
+import Search from "@/components/Search";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -12,8 +13,10 @@ export default async function Home() {
   }
 
   return (
-    <div>
-      <h1>Welcome to SuperChat</h1>
+    <div className="max-w-5xl mx-auto h-screen flex justify-center items-center">
+      <div className="w-full h-[80vh] rounded-sm shadow-sm border flex flex-col P-5">
+          <Search />    
+      </div>
     </div>
   );
 }
